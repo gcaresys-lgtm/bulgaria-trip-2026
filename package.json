@@ -1,0 +1,13 @@
+{
+  "name": "bulgaria-trip-2026",
+  "version": "1.0.0",
+  "description": "Bulgaria 2026 Sunny Beach Vacation PWA",
+  "scripts": {
+    "dev": "python server.py",
+    "start": "python server.py"
+  },
+  "dependencies": {
+    "@vercel/blob": "^0.23.0",
+    "uuid": "^9.0.0"
+  }
+}

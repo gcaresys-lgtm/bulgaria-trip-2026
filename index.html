@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1e3a8a">
+    <meta name="description" content="Bulgaria 2026 - Sunny Beach Vacation PWA">
+    <title>Bulgaria 2026 - Sunny Beach</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="icon-192.png">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>🇧🇬 Bulgaria 2026</h1>
+                <p>Sunny Beach Vacation • 6–12 July 2026</p>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav">
+            <button class="nav-btn active" data-tab="home">דף הבית</button>
+            <button class="nav-btn" data-tab="itinerary">מסלול</button>
+            <button class="nav-btn" data-tab="photos">תמונות</button>
+            <button class="nav-btn" data-tab="tips">מידע</button>
+            <button class="nav-btn" data-tab="checklist">רשימה</button>
+            <button class="nav-btn" data-tab="emergency">חירום</button>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main">
+            <!-- Home Tab -->
+            <section id="home" class="tab-content active">
+                <div class="hotel-card">
+                    <div class="hotel-header">
+                        <h2>🏨 Premier Fort Cuisine</h2>
+                        <div class="rating">⭐ 9.1</div>
+                    </div>
+                    <div class="hotel-details">
+                        <p>🏖️ על חוף הים</p>
+                        <p>🍽️ פנסיון מלא</p>
+                        <p>📅 6–12 יולי 2026</p>
+                    </div>
+                </div>
+
+                <div class="flight-card">
+                    <h3>✈️ פרטי הטיסה</h3>
+                    <div class="flight-route">
+                        <div class="flight-end">
+                            <span class="city">תל אביב</span>
+                            <span class="time">07:45</span>
+                        </div>
+                        <div class="flight-arrow">✈️ →</div>
+                        <div class="flight-end">
+                            <span class="city">בורגס</span>
+                            <span class="time">10:10</span>
+                        </div>
+                    </div>
+                    <p class="flight-date">📅 6/7/2026</p>
+                </div>
+
+                <div class="weather-widget">
+                    <h3>🌦️ מזג אוויר צפוי</h3>
+                    <div class="weather-info">
+                        <div class="weather-item">
+                            <span>טמפרטורה ביום</span>
+                            <span>28–31°C</span>
+                        </div>
+                        <div class="weather-item">
+                            <span>טמפרטורה בלילה</span>
+                            <span>20–23°C</span>
+                        </div>
+                        <div class="weather-item">
+                            <span>מצב הים</span>
+                            <span>מים חמימים</span>
+                        </div>
+                        <div class="weather-item">
+                            <span>גשם</span>
+                            <span>כמעט ללא גשם</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="currency-converter">
+                    <h3>💱 ממיר מטבע</h3>
+                    <div class="converter-input">
+                        <input type="number" id="amount" placeholder="סכום" value="100">
+                        <select id="from-currency">
+                            <option value="ILS">ILS (שקל)</option>
+                            <option value="EUR">EUR (אירו)</option>
+                            <option value="USD">USD (דולר)</option>
+                        </select>
+                        <span>→</span>
+                        <span id="result">~186.45 BGN</span>
+                    </div>
+                    <p class="converter-note">מטבע: לב בולגרי (BGN)</p>
+                </div>
+            </section>
+
+            <!-- Itinerary Tab -->
+            <section id="itinerary" class="tab-content">
+                <div class="day-selector">
+                    <button class="day-btn active" data-day="1">יום 1</button>
+                    <button class="day-btn" data-day="2">יום 2</button>
+                    <button class="day-btn" data-day="3">יום 3</button>
+                    <button class="day-btn" data-day="4">יום 4</button>
+                    <button class="day-btn" data-day="5">יום 5</button>
+                    <button class="day-btn" data-day="6">יום 6</button>
+                    <button class="day-btn" data-day="7">יום 7</button>
+                </div>
+
+                <div class="itinerary-content">
+                    <!-- Day 1 -->
+                    <div class="day-schedule active" data-day="1">
+                        <h3>יום 1 – שני (6.7)</h3>
+                        
+                        <div class="time-block">
+                            <h4>🛫 הגעה</h4>
+                            <ul class="activity-list">
+                                <li><input type="checkbox" class="activity-check"> נחיתה בבורגס</li>
+                                <li><input type="checkbox" class="activity-check"> איסוף מזוודות</li>
+                                <li><input type="checkbox" class="activity-check"> הסעה למלון</li>
+                                <li><input type="checkbox" class="activity-check"> Check-in</li>
+                            </ul>
+                        </div>
+
+                        <div class="time-block">
+                            <h4>🌤️ אחר הצהריים</h4>
+                            <ul class="activity-list">
+                                <li><input type="checkbox" class="activity-check"> היכרות עם המלון</li>
+                                <li><input type="checkbox" class="activity-check"> בריכה</li>
+                                <li><input type="checkbox" class="activity-check"> חוף ים</li>
+                            </ul>
+                        </div>
+
+                        <div class="time-block">
+                            <h4>🌙 ערב</h4>
+                            <ul class="activity-list">
+                                <li><input type="checkbox" class="activity-check"> ארוחת ערב במלון</li>
+                                <li><input type="checkbox" class="activity-check"> הליכה בטיילת</li>
+                                <li><input type="checkbox" class="activity-check"> גלידה</li>
+                                <li><input type="checkbox" class="activity-check"> קוקטייל</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Day 2 -->
+                    <div class="day-schedule" data-day="2">
+                        <h3>יום 2 – שלישי</h3>
+                        
+                        <div class="time-block">
+                            <h4>☀️ בוקר וצהריים</h4>
+                            <ul class="activity-list">
+                                <li><input type="checkbox" class="activity-check"> ארוחת בוקר</li>
+                                <li><input type="checkbox" class="activity-check"> ים</li>
+                                <li><input type="checkbox" class="activity-check"> בריכה</li>
+                                <li><input type="checkbox" class="activity-check"> מגלשות</li>
+                                <li><input type="checkbox" class="activity-check"> מנוחה</li>
+                            </ul>
+                        </div>
+
+                        <div class="time-block">
+                            <h4>🌙 ערב</h4>
+                            <ul class="activity-list">
+                                <li><input type="checkbox" class="activity-check"> מרכז סאני ביץ'</li>
+                                <li><input type="checkbox" class="activity-check"> ברים</li>
+                                <li><input type="checkbox" class="activity-check"> הופעות רחוב</li>
+                                <li><input type="checkbox" class="activity-check"> מוזיקה</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Day 3 -->
+                    <div class="day-schedule" data-day="3">
+                        <h3>יום 3 – רביעי</h3>
+                        
+                        <div class="time-block">
+                            <h4>🏛️ טיול לנסבר</h4>
+                            <div class="trip-info">
+                                <p>📍 מרחק: כ־10 דקות נסיעה</p>
+                                <p>⏰ מומלץ להגיע אחר הצהריים ולהישאר עד השקיעה</p>
+                            </div>
+                            <ul class="activity-list">
+                                <li><input type="checkbox" class="activity-check"> העיר העתיקה</li>
+                                <li><input type="checkbox" class="activity-check"> הסמטאות</li>
+                                <li><input type="checkbox" class="activity-check"> הכנסיות</li>
+                                <li><input type="checkbox" class="activity-check"> הנמל</li>
+                                <li><input type="checkbox" class="activity-check"> גלידה</li>
+                                <li><input type="checkbox" class="activity-check"> בתי קפה</li>
+                                <li><input type="checkbox" class="activity-check"> קניות</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Day 4 -->
+                    <div class="day-schedule" data-day="4">
+                        <h3>יום 4 – חמישי</h3>
+                        
+                        <div class="time-block">
+                            <h4>🎢 יום אטרקציות</h4>
+                            <p>אפשר לבחור:</p>
+                            <ul class="activity-list">
+                                <li><input type="checkbox" class="activity-check"> 💦 פארק מים</li>
+                                <li><input type="checkbox" class="activity-check"> 🚤 שייט</li>
+                                <li><input type="checkbox" class="activity-check"> 🏍️ טרקטורונים</li>
+                                <li><input type="checkbox" class="activity-check"> 🚙 ג'יפים</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Day 5 -->
+                    <div class="day-schedule" data-day="5">
+                        <h3>יום 5 – שישי</h3>
+                        
+                        <div class="time-block">
+                            <h4>😌 יום רגוע</h4>
+                            <ul class="activity-list">
+                                <li><input type="checkbox" class="activity-check"> ארוחת בוקר</li>
+                                <li><input type="checkbox" class="activity-check"> ים</li>
+                                <li><input type="checkbox" class="activity-check"> ספא</li>
+                                <li><input type="checkbox" class="activity-check"> מסאז'</li>
+                                <li><input type="checkbox" class="activity-check"> בריכה</li>
+                            </ul>
+                        </div>
+
+                        <div class="time-block">
+                            <h4>🌙 ערב</h4>
+                            <ul class="activity-list">
+                                <li><input type="checkbox" class="activity-check"> קוקטייל מול הים</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Day 6 -->
+                    <div class="day-schedule" data-day="6">
+                        <h3>יום 6 – שבת</h3>
+                        
+                        <div class="time-block">
+                            <h4>🛍️ יום קניות</h4>
+                            <p>מומלץ:</p>
+                            <ul class="activity-list">
+                                <li><input type="checkbox" class="activity-check"> Royal Beach Mall</li>
+                                <li><input type="checkbox" class="activity-check"> מזכרות</li>
+                                <li><input type="checkbox" class="activity-check"> סופרמרקט</li>
+                                <li><input type="checkbox" class="activity-check"> שוק מקומי</li>
+                            </ul>
+                            
+                            <h4>🛒 לקנות:</h4>
+                            <ul class="activity-list">
+                                <li><input type="checkbox" class="activity-check"> שוקולדים</li>
+                                <li><input type="checkbox" class="activity-check"> אלכוהול</li>
+                                <li><input type="checkbox" class="activity-check"> קוסמטיקה</li>
+                                <li><input type="checkbox" class="activity-check"> מגנטים</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Day 7 -->
+                    <div class="day-schedule" data-day="7">
+                        <h3>יום 7 – ראשון</h3>
+                        
+                        <div class="time-block">
+                            <h4>☀️ בוקר</h4>
+                            <ul class="activity-list">
+                                <li><input type="checkbox" class="activity-check"> ארוחת בוקר</li>
+                                <li><input type="checkbox" class="activity-check"> בריכה</li>
+                                <li><input type="checkbox" class="activity-check"> צילומים אחרונים</li>
+                            </ul>
+                        </div>
+
+                        <div class="time-block">
+                            <h4>✈️ חזרה</h4>
+                            <ul class="activity-list">
+                                <li><input type="checkbox" class="activity-check"> Check-out</li>
+                                <li><input type="checkbox" class="activity-check"> נסיעה לשדה</li>
+                                <li><input type="checkbox" class="activity-check"> טיסה לישראל</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Photos Tab -->
+            <section id="photos" class="tab-content">
+                <div class="photos-header">
+                    <h3>📸 תמונות מהטיול</h3>
+                    <div class="photo-counter">
+                        <span id="photo-count">0</span>/50
+                    </div>
+                </div>
+
+                <div class="upload-area" id="upload-area">
+                    <div class="upload-icon">📷</div>
+                    <p>לחץ להוספת תמונה</p>
+                    <p class="upload-hint">או גרור תמונות לכאן</p>
+                    <input type="file" id="file-input" accept="image/*" multiple capture="environment" style="display: none;">
+                </div>
+
+                <div class="upload-buttons">
+                    <button id="camera-btn" class="upload-btn camera-btn">
+                        📷 מצלמה
+                    </button>
+                    <button id="gallery-btn" class="upload-btn gallery-btn">
+                        🖼️ גלריה
+                    </button>
+                </div>
+
+                <div class="upload-progress" id="upload-progress" style="display: none;">
+                    <div class="progress-text">מעלה תמונה...</div>
+                    <div class="progress-bar-mini">
+                        <div class="progress-fill-mini" id="upload-progress-fill"></div>
+                    </div>
+                </div>
+
+                <div class="photo-grid" id="photo-grid">
+                    <!-- Photos will be added here dynamically -->
+                </div>
+
+                <div class="photos-footer">
+                    <button id="done-without-photos" class="btn-secondary">
+                        סיים בלי תמונות
+                    </button>
+                    <button id="save-photos" class="btn-primary" disabled>
+                        שמור תמונות (0)
+                    </button>
+                </div>
+
+                <div class="photo-modal" id="photo-modal" style="display: none;">
+                    <div class="modal-content">
+                        <button class="modal-close" id="modal-close">✕</button>
+                        <img id="modal-image" src="" alt="תמונה">
+                        <div class="modal-actions">
+                            <button id="modal-delete" class="btn-danger">🗑️ מחק</button>
+                            <button id="modal-download" class="btn-secondary">⬇️ הורד</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tips Tab -->
+            <section id="tips" class="tab-content">
+                <div class="tip-card">
+                    <h3>🍽️ איפה אוכלים?</h3>
+                    <p>בגלל שיש Full Board:</p>
+                    <ul class="tip-list">
+                        <li>✔ ארוחת בוקר במלון</li>
+                        <li>✔ ארוחת צהריים במלון</li>
+                        <li>✔ ארוחת ערב במלון</li>
+                    </ul>
+                    <p>בחוץ רק:</p>
+                    <ul class="tip-list">
+                        <li>☕ קפה</li>
+                        <li>🍦 גלידה</li>
+                        <li>🍹 קוקטיילים</li>
+                        <li>🍰 קינוחים</li>
+                    </ul>
+                </div>
+
+                <div class="tip-card">
+                    <h3>💶 כסף</h3>
+                    <ul class="tip-list">
+                        <li>💵 מטבע: לב בולגרי (BGN)</li>
+                        <li>💰 מעט מזומן</li>
+                        <li>💳 רוב התשלומים באשראי</li>
+                        <li>⚠️ להימנע מהמרת כסף בדלפקים תיירותיים</li>
+                    </ul>
+                </div>
+
+                <div class="tip-card">
+                    <h3>📱 אפליקציות מומלצות</h3>
+                    <ul class="tip-list">
+                        <li>🗺️ Google Maps (מפות לא מקוונות)</li>
+                        <li>🚕 Uber/Bolt (אם זמין באזור)</li>
+                        <li>🌐 Google Translate</li>
+                        <li>💱 XE Currency (המרת מטבע)</li>
+                    </ul>
+                </div>
+
+                <div class="tip-card">
+                    <h3>📍 נקודות עניין</h3>
+                    <ul class="tip-list">
+                        <li>🏨 Premier Fort Cuisine</li>
+                        <li>🏖️ Sunny Beach</li>
+                        <li>🏛️ Nessebar</li>
+                        <li>💦 Action Aquapark</li>
+                        <li>🛍️ Royal Beach Mall</li>
+                        <li>✈️ Burgas Airport</li>
+                    </ul>
+                </div>
+
+                <div class="notes-section">
+                    <h3>📝 הערות אישיות</h3>
+                    <textarea id="personal-notes" placeholder="הוסף הערות אישיות, הוצאות או תמונות מהטיול..."></textarea>
+                    <button id="save-notes" class="save-btn">שמור הערות</button>
+                </div>
+            </section>
+
+            <!-- Checklist Tab -->
+            <section id="checklist" class="tab-content">
+                <h3>🎒 רשימת ציוד</h3>
+                <div class="checklist">
+                    <label class="checklist-item">
+                        <input type="checkbox" class="pack-check">
+                        <span>דרכון</span>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" class="pack-check">
+                        <span>ביטוח נסיעות</span>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" class="pack-check">
+                        <span>מטען</span>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" class="pack-check">
+                        <span>בגד ים</span>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" class="pack-check">
+                        <span>כפכפים</span>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" class="pack-check">
+                        <span>קרם הגנה</span>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" class="pack-check">
+                        <span>כובע</span>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" class="pack-check">
+                        <span>משקפי שמש</span>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" class="pack-check">
+                        <span>מטען נייד</span>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" class="pack-check">
+                        <span>תרופות אישיות</span>
+                    </label>
+                </div>
+                
+                <div class="progress-bar">
+                    <div class="progress-fill" id="pack-progress">0% נארז</div>
+                </div>
+            </section>
+
+            <!-- Emergency Tab -->
+            <section id="emergency" class="tab-content">
+                <div class="emergency-card">
+                    <h3>🚨 חירום</h3>
+                    <div class="emergency-numbers">
+                        <div class="emergency-item">
+                            <span class="label">משטרה</span>
+                            <a href="tel:112" class="number">112</a>
+                        </div>
+                        <div class="emergency-item">
+                            <span class="label">אמבולנס</span>
+                            <a href="tel:150" class="number">150</a>
+                        </div>
+                        <div class="emergency-item">
+                            <span class="label">כיבוי אש</span>
+                            <a href="tel:160" class="number">160</a>
+                        </div>
+                        <div class="emergency-item">
+                            <span class="label">שגרירות ישראל</span>
+                            <a href="tel:+35929433205" class="number">+359 2 943 3205</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hotel-info-card">
+                    <h3>🏨 פרטי המלון</h3>
+                    <div class="hotel-details">
+                        <p><strong>שם:</strong> Premier Fort Cuisine</p>
+                        <p><strong>דירוג:</strong> ⭐ 9.1</p>
+                        <p><strong>כתובת:</strong> Sunny Beach, Bulgaria</p>
+                        <p><strong>טלפון:</strong> +359 88 888 8888</p>
+                    </div>
+                </div>
+
+                <div class="flight-info-card">
+                    <h3>✈️ פרטי הטיסה</h3>
+                    <div class="flight-details">
+                        <p><strong>חברת תעופה:</strong> TBD</p>
+                        <p><strong>מספר טיסה:</strong> TBD</p>
+                        <p><strong>הלוך:</strong> 6/7/2026, 07:45 → 10:10</p>
+                        <p><strong>חזור:</strong> 12/7/2026</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Install Button -->
+        <button id="install-btn" class="install-btn" style="display: none;">
+            📲 הוסף למסך הבית
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
